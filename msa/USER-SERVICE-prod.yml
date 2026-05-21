@@ -43,11 +43,11 @@ spring:
   # Spring Redis Cache 설정
     cache:
         type: redis
-        cache-names: "csCatetories" # 캐시 이름 설정
+        cache-names: "cs" # 캐시 이름 설정
         redis:
             time-to-live: 10m # 캐시 TTL (10분, ms)
             use-key-prefix: true
-            key-prefix: "cs:" # 캐시 키 접두사
+            key-prefix: "algotalk:" # 캐시 키 접두사
             cache-null-values: false
 
   # OAuth2 소셜 로그인
