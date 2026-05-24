@@ -55,6 +55,14 @@ spring:
                 - Path=/api/community/**
               filters:
                 - StripPrefix=1
+
+            - id: aiService
+              uri: http://localhost:8085
+              predicates:
+                - Path=/api/ai/**
+              filters:
+                - StripPrefix=1
+
       globalcors:
         add-to-simple-url-handler-mapping: true
         cors-configurations:
