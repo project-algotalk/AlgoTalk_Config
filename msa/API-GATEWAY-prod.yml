@@ -97,7 +97,7 @@ api:
       protocol: http
       host: localhost
       port: 8081
-      refresh-endpoint: /api/user/v1/token/reissue
+      refresh-endpoint: /user/v1/token/reissue
 
 management:
   endpoints:
