@@ -9,3 +9,11 @@ eureka:
 ai:
   service:
     url: https://algotalk.kr
+
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          aiService:
+            url: ${ai.service.url}
