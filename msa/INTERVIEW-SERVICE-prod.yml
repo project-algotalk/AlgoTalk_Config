@@ -63,4 +63,4 @@ mybatis:
 # python url
 ai:
   service:
-    url: https://algotalk.kr
+    url: https://algotalk.kr/ai-api/
