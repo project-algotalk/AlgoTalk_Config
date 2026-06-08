@@ -15,7 +15,7 @@ spring:
 
   # MariaDB
   datasource:
-    url: ${MARIA_DB_URL}
+    url: ${MARIA_DB_URL_COMMUNITY}
     username: ${MARIA_DB_USERNAME}
     password: ${MARIA_DB_PASSWORD}
     driver-class-name: org.mariadb.jdbc.Driver
