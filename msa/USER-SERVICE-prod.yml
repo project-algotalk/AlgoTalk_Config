@@ -17,10 +17,6 @@ spring:
     password: ${MARIA_DB_PASSWORD}
     driver-class-name: org.mariadb.jdbc.Driver
 
-  # MongoDB
-  mongodb:
-    uri: ${MONGO_DB_URI}
-
   # Redis
   data:
     redis:
@@ -37,6 +33,10 @@ spring:
             max-idle: 16
             min-idle: 4
             max-wait: 5s
+
+    # MongoDB
+    mongodb:
+      uri: ${MONGO_DB_URI}
 
   # Spring Redis Cache 설정
     cache:
