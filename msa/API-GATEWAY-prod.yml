@@ -5,7 +5,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eurekaserver:8761/eureka/
   instance:
     prefer-ip-address: true
 
@@ -57,7 +57,7 @@ spring:
                 - StripPrefix=1
 
             - id: aiService
-              uri: http://localhost:8085
+              uri: https://algotalk.kr
               predicates:
                 - Path=/api/ai/**
               filters:
@@ -68,7 +68,7 @@ spring:
         cors-configurations:
           '[/**]':
             allowedOriginPatterns:
-              - "http://localhost:5173" # 명시적 출처로 변경(withCredentials 호환)
+              - "https://algotalk.kr" # 명시적 출처로 변경(withCredentials 호환)
             allowedMethods:
               - GET
               - POST
@@ -94,9 +94,9 @@ jwt:
 api:
   server:
     user:
-      protocol: http
-      host: localhost
-      port: 8081
+      protocol: https
+      host: api.algotalk.kr
+      port: 443             # 8081 -> 443 (HTTPS)
       refresh-endpoint: /api/user/v1/token/reissue
 
 management:

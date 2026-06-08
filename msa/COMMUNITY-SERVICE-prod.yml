@@ -1,0 +1,66 @@
+server:
+  port: 8082
+
+# Eureka Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekaserver:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: COMMUNITY-SERVICE
+
+  # MariaDB
+  datasource:
+    url: ${MARIA_DB_URL}
+    username: ${MARIA_DB_USERNAME}
+    password: ${MARIA_DB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  # MongoDB
+  mongodb:
+    uri: ${MONGO_DB_URI}
+
+  # Redis
+  data:
+    redis:
+      host: ${AWS_HOST}
+      port: 6379
+      username: ${REDIS_USERNAME}
+      password: ${REDIS_PASSWORD}              # Redis 비밀번호 설정한 경우 주석 해제
+
+      # (Optional) Redis connection pool 설정
+      client:
+        lettuce:
+          pool:
+            max-active: 32
+            max-idle: 16
+            min-idle: 4
+            max-wait: 5s
+
+  # Spring Redis Cache 설정
+  cache:
+    type: redis
+    cache-names: cs
+    redis:
+      time-to-live: 10m
+      use-key-prefix: true
+      key-prefix: "algotalk:"
+      cache-null-values: false
+
+# MyBatis
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true    # user_id → userId 자동 매핑
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  type-aliases-package: com.algotalk.communityservice.dto
+
+
+# python url
+ai:
+  service:
+    url: https://algotalk.kr
