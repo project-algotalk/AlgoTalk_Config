@@ -13,6 +13,23 @@ spring:
   application:
     name: API-GATEWAY
 
+  # Redis
+  data:
+    redis:
+      host: ${AWS_HOST}
+      port: 6379
+      username: ${REDIS_USERNAME}
+      password: ${REDIS_PASSWORD}              # Redis 비밀번호 설정한 경우 주석 해제
+
+      # (Optional) Redis connection pool 설정
+      client:
+        lettuce:
+          pool:
+            max-active: 32
+            max-idle: 16
+            min-idle: 4
+            max-wait: 5s
+
   # OAuth2 리소스 서버 설정 (JWT decode 키)
   security:
     oauth2:
