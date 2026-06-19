@@ -112,7 +112,7 @@ jwt:
     key: ${JWT_SECRET_KEY}
   access:
     token:
-      expiration: 600000        # 10분 (ms)
+      expiration: 1200000        # 20분 (ms)
   refresh:
     token:
       expiration: 604800000     # 7일 (ms)
