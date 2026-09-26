@@ -48,7 +48,7 @@ spring:
             - id: userService
               uri: lb://USER-SERVICE        # Eureka에 등록된 이름 (대문자)
               predicates:
-                - Path=/api/user/**, /api/mypage/**, /api/cs-categories/**
+                - Path=/api/user/**, /api/mypage/**, /api/cs-categories/**, /api/admin/**
               filters:
                 - StripPrefix=1            # /api/user/login -> /user/login 으로 전달(맨 앞 글자 제거)
 
