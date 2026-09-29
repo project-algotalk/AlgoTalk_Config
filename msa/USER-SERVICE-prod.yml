@@ -176,3 +176,18 @@ userservice:
 app:
   frontend:
     url: https://algotalk.kr
+
+# AWS S3 설정
+cloud:
+  aws:
+    credentials:
+      access-key: ${AWS_ACCESS_KEY_ID}
+      secret-key: ${AWS_SECRET_ACCESS_KEY}
+    region:
+      static: ${AWS_REGION}
+    s3:
+      bucket: ${AWS_S3_BUCKET}
+
+# 이미지 파일 사이즈
+image:
+  max-size: ${IMAGE_MAX_SIZE:5242880}
